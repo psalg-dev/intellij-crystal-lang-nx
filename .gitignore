@@ -48,3 +48,5 @@ bin/
 /.intellijPlatform/self-update.lock
 /.run/Run IDE with Plugin.run.xml
 /.intellijPlatform/localPlatformArtifacts/IC-242.26775.15/bundledPlugin-com.intellij.java-IC-242.26775.15.xml
+/jflex-1.9.2.jar
+/idea-flex.skeleton
