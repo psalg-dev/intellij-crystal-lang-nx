@@ -1,50 +1,55 @@
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.25"
-    id("org.jetbrains.intellij.platform") version "2.3.0"
+    id("org.jetbrains.intellij.platform") version "2.6.0"
 }
 
 group = "org.intellij.crystal"
 version = "1.0-NX-SNAPSHOT"
 
+// Include the generated files in the source set
+sourceSets {
+    main {
+        java {
+            srcDirs("src/main/gen")
+        }
+    }
+}
+
 repositories {
     mavenCentral()
+
     intellijPlatform {
         defaultRepositories()
     }
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     intellijPlatform {
-        create("IC", "2024.2.5")
-        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
+        intellijIdeaCommunity("2024.2.6")
+        bundledPlugin("com.intellij.java")
 
-        // Add necessary plugin dependencies for compilation here, example:
-        // bundledPlugin("com.intellij.java")
+        testFramework(TestFrameworkType.Plugin.Java)
     }
+
+    testImplementation("junit:junit:4.13.2")
+    // workaround for <2024.3
+    // https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-faq.html#missing-opentest4j-dependency-in-test-framework
+    testImplementation("org.opentest4j:opentest4j:1.3.0")
 }
 
 intellijPlatform {
+    buildSearchableOptions = false
+
     pluginConfiguration {
         ideaVersion {
             sinceBuild = "242"
         }
-
-        changeNotes = """
-      Initial version
-    """.trimIndent()
     }
-}
-
-tasks {
-    // Set the JVM compatibility versions
-    withType<JavaCompile> {
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
+    pluginVerification  {
+        ides {
+            recommended()
+        }
     }
 }

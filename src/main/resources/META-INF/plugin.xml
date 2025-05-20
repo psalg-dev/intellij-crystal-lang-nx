@@ -1,20 +1,19 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>com.example.intellij-crystal-lang-nx</id>
+    <id>intellij-crystal-lang-nx</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Intellij-crystal-lang-nx</name>
+    <name>Crystal-Lang</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://github.com/psalg-dev/intellij-crystal-lang-nx">p.salg</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    Crystal Language support for IntelliJ IDEA 2024+ since previous plugins are no longer maintained.
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -24,6 +23,11 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <fileType
+                name="Crystal File"
+                implementationClass="org.intellij.crystal.CrystalFileType"
+                fieldName="INSTANCE"
+                language="Crystal"
+                extensions="cr"/>
     </extensions>
 </idea-plugin>
