@@ -50,3 +50,4 @@ bin/
 /.intellijPlatform/localPlatformArtifacts/IC-242.26775.15/bundledPlugin-com.intellij.java-IC-242.26775.15.xml
 /jflex-1.9.2.jar
 /idea-flex.skeleton
+/fix-git.sh
