@@ -11,6 +11,7 @@
   elementTypeHolderClass="org.intellij.crystal.lang.psi.CrystalTypes"
   elementTypeClass="org.intellij.crystal.lang.psi.CrystalElementType"
   tokenTypeClass="org.intellij.crystal.lang.psi.CrystalTokenType"
+  psiImplUtilClass="org.intellij.crystal.lang.psi.impl.CrystalPsiImplUtil"
 }
 
 crystalFile ::= item_*
@@ -18,3 +19,6 @@ crystalFile ::= item_*
 private item_ ::= (property|COMMENT|CRLF)
 
 property ::= (KEY? SEPARATOR VALUE?) | KEY
+{
+  methods=[getKey getValue]
+}

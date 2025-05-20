@@ -27,4 +27,14 @@ public class CrPropertyImpl extends ASTWrapperPsiElement implements CrProperty {
     else super.accept(visitor);
   }
 
+  @Override
+  public String getKey() {
+    return CrystalPsiImplUtil.getKey(this);
+  }
+
+  @Override
+  public String getValue() {
+    return CrystalPsiImplUtil.getValue(this);
+  }
+
 }

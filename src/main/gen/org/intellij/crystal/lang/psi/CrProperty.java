@@ -7,4 +7,8 @@ import com.intellij.psi.PsiElement;
 
 public interface CrProperty extends PsiElement {
 
+  String getKey();
+
+  String getValue();
+
 }
