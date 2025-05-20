@@ -32,5 +32,10 @@
         <lang.parserDefinition
                 language="Crystal"
                 implementationClass="org.intellij.crystal.lang.parser.CrystalParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="Crystal"
+                implementationClass="org.intellij.crystal.lang.syntax.CrystalSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="org.intellij.crystal.lang.syntax.CrystalColorSettingsPage"/>
     </extensions>
 </idea-plugin>
