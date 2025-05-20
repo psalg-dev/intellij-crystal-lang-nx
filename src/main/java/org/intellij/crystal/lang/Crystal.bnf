@@ -1,0 +1,20 @@
+{
+  parserClass="org.intellij.crystal.lang.parser.CrystalParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Cr"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.intellij.crystal.lang.psi"
+  psiImplPackage="org.intellij.crystal.lang.psi.impl"
+
+  elementTypeHolderClass="org.intellij.crystal.lang.psi.CrystalTypes"
+  elementTypeClass="org.intellij.crystal.lang.psi.CrystalElementType"
+  tokenTypeClass="org.intellij.crystal.lang.psi.CrystalTokenType"
+}
+
+crystalFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
