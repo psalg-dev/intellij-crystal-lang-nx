@@ -29,5 +29,8 @@
                 fieldName="INSTANCE"
                 language="Crystal"
                 extensions="cr"/>
+        <lang.parserDefinition
+                language="Crystal"
+                implementationClass="org.intellij.crystal.lang.parser.CrystalParserDefinition"/>
     </extensions>
 </idea-plugin>
