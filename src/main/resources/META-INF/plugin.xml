@@ -40,7 +40,7 @@
                 implementationClass="org.intellij.crystal.lang.syntax.CrystalSyntaxHighlighterFactory"/>
         <colorSettingsPage
                 implementation="org.intellij.crystal.lang.syntax.CrystalColorSettingsPage"/>
-
+        <!-- project -->
         <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.CrystalProjectGenerator"/>
 
     </extensions>

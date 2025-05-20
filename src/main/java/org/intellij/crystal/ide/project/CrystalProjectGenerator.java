@@ -28,6 +28,9 @@ public class CrystalProjectGenerator implements LanguageGeneratorNewProjectWizar
 
     @Override
     public @NotNull NewProjectWizardStep createStep(@NotNull NewProjectWizardStep newProjectWizardStep) {
-        return newProjectWizardStep;
+        return new CrystalProjectGeneratorPanel("NewProjectWizard.CrystalState", newProjectWizardStep);
     }
+
+
+
 }
