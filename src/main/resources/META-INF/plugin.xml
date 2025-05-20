@@ -23,19 +23,25 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <!-- Language definition -->
         <fileType
                 name="Crystal File"
                 implementationClass="org.intellij.crystal.CrystalFileType"
                 fieldName="INSTANCE"
                 language="Crystal"
                 extensions="cr"/>
+        <!-- parser -->
         <lang.parserDefinition
                 language="Crystal"
                 implementationClass="org.intellij.crystal.lang.parser.CrystalParserDefinition"/>
+        <!-- syntax -->
         <lang.syntaxHighlighterFactory
                 language="Crystal"
                 implementationClass="org.intellij.crystal.lang.syntax.CrystalSyntaxHighlighterFactory"/>
         <colorSettingsPage
                 implementation="org.intellij.crystal.lang.syntax.CrystalColorSettingsPage"/>
+
+        <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.CrystalProjectGenerator"/>
+
     </extensions>
 </idea-plugin>
