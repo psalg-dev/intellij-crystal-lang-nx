@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.module;
 
 import com.intellij.execution.RunManager;
 import com.intellij.execution.RunnerAndConfigurationSettings;
@@ -11,6 +11,8 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.refactoring.util.CommonRefactoringUtil;
 import org.intellij.crystal.ProcessUtilsExt;
+import org.intellij.crystal.ide.project.*;
+import org.intellij.crystal.ide.project.run.CrystalFileRunConfigurationType;
 import org.jetbrains.annotations.NotNull;
 
 import static java.util.Optional.ofNullable;

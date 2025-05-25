@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-import static org.intellij.crystal.ide.project.CrystalModuleBuilder.generateCrystalProject;
+import static org.intellij.crystal.ide.project.module.CrystalModuleBuilder.generateCrystalProject;
 
 public class CrystalDirectoryProjectGenerator extends DirectoryProjectGeneratorBase<CrystalProjectGeneratorConfig>
         implements CustomStepProjectGenerator<CrystalProjectGeneratorConfig> {

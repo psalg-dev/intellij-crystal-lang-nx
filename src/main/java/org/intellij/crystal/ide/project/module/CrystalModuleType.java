@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.module;
 
 import com.intellij.openapi.module.ModuleType;
 import org.intellij.crystal.CrystalIcons;

@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.run;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationTypeBase;
@@ -12,11 +12,11 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class CrystalFileBuildConfigurationType extends ConfigurationTypeBase {
-    public CrystalFileBuildConfigurationType() {
-        super("CRYSTAL_BUILD_CONFIGURATION",
+public class CrystalFileRunConfigurationType extends ConfigurationTypeBase {
+    public CrystalFileRunConfigurationType() {
+        super("CRYSTAL_RUN_CONFIGURATION",
                 "Crystal",
-                "Crystal Build configuration",
+                "Crystal run configuration",
                 NotNullLazyValue.createValue(() -> CrystalIcons.FILE));
         addFactory(
                 new ConfigurationFactory(this) {
@@ -39,8 +39,8 @@ public class CrystalFileBuildConfigurationType extends ConfigurationTypeBase {
         );
     }
 
-    public static CrystalFileBuildConfigurationType getInstance() {
-        return ConfigurationTypeUtil.findConfigurationType(CrystalFileBuildConfigurationType.class);
+    public static CrystalFileRunConfigurationType getInstance() {
+        return ConfigurationTypeUtil.findConfigurationType(CrystalFileRunConfigurationType.class);
     }
 
 }

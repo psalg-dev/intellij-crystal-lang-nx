@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.run.build;
 
 import com.intellij.build.output.BuildOutputParser;
 import com.intellij.openapi.vfs.VfsUtil;

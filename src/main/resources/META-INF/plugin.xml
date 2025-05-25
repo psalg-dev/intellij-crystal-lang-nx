@@ -44,12 +44,12 @@
         <!-- project -->
         <projectService serviceImplementation="org.intellij.crystal.ide.project.CrystalProjectSettings"/>
         <projectService serviceImplementation="org.intellij.crystal.ide.project.CrystalProjectWorkspaceSettings"/>
-        <moduleBuilder builderClass="org.intellij.crystal.ide.project.CrystalModuleBuilder"/>
+        <moduleBuilder builderClass="org.intellij.crystal.ide.project.module.CrystalModuleBuilder"/>
 
-        <configurationType implementation="org.intellij.crystal.ide.project.CrystalFileRunConfigurationType"/>
-        <configurationType implementation="org.intellij.crystal.ide.project.CrystalFileBuildConfigurationType"/>
+        <configurationType implementation="org.intellij.crystal.ide.project.run.CrystalFileRunConfigurationType"/>
+        <configurationType implementation="org.intellij.crystal.ide.project.run.CrystalFileBuildConfigurationType"/>
         <directoryProjectGenerator implementation="org.intellij.crystal.ide.project.CrystalDirectoryProjectGenerator"/>
-        <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.CrystalLanguageGeneratorNewProjectWizard"/>
+        <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.wizard.CrystalLanguageGeneratorNewProjectWizard"/>
         <treeStructureProvider implementation="org.intellij.crystal.ide.project.tree.CrystalProjectStructureProvider"/>
 
     </extensions>

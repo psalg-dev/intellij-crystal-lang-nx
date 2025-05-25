@@ -3,14 +3,11 @@ package org.intellij.crystal.ide.project;
 
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.CapturingProcessHandler;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.intellij.crystal.ProcessUtilsExt;
 import org.jetbrains.annotations.NonNls;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 public class CrystalCompiler {

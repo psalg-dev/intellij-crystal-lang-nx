@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.run.build;
 
 import com.intellij.build.BuildContentDescriptor;
 import com.intellij.build.BuildViewManager;

@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.wizard;
 
 import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.ide.wizard.NewProjectWizardStep;
@@ -13,6 +13,12 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.UserDataHolder;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import org.intellij.crystal.CrystalIcons;
+import org.intellij.crystal.ide.project.CrystalProjectGeneratorConfig;
+import org.intellij.crystal.ide.project.CrystalProjectSettings;
+import org.intellij.crystal.ide.project.CrystalProjectTemplate;
+import org.intellij.crystal.ide.project.CrystalProjectWorkspaceSettings;
+import org.intellij.crystal.ide.project.module.CrystalModuleBuilder;
+import org.intellij.crystal.ide.project.module.CrystalModuleType;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -63,13 +69,21 @@ public class CrystalLanguageGeneratorNewProjectWizard implements LanguageGenerat
             return parent.getData();
         }
 
+        /**
+         * This code runs when clicking "new" -> "project" -> "Crystal" in the IDE.
+         */
         @Override
         public void setupProject(@NotNull Project project) {
+            // TODO: this should be supplied by user..
             CrystalProjectGeneratorConfig config = new CrystalProjectGeneratorConfig(CrystalProjectTemplate.APPLICATION, new CrystalProjectSettings.State(), new CrystalProjectWorkspaceSettings.State());
 
             var root = VirtualFileManager.getInstance().findFileByNioPath(Paths.get(project.getBasePath()));
 
+            // this generates the files on disk
             CrystalModuleBuilder.generateCrystalProject(project, root, config);
+
+            // this sets up an intellij module for the project so it is rendered correctly in the
+            // project view of intellij
             ModuleManager moduleManager = ModuleManager.getInstance(project);
             ApplicationManager.getApplication().runWriteAction(() -> {
                 Module newModule = moduleManager.newModule(Paths.get(project.getBasePath()), CrystalModuleType.INSTANCE.getId());

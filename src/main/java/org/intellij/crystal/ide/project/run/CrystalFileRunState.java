@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.run;
 
 import com.intellij.build.BuildContentManager;
 import com.intellij.build.BuildViewManager;
@@ -13,6 +13,7 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
+import org.intellij.crystal.ide.project.run.build.CrystalBuildProcessListener;
 
 import java.nio.file.Path;
 

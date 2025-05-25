@@ -1,4 +1,4 @@
-package org.intellij.crystal.ide.project;
+package org.intellij.crystal.ide.project.run;
 
 import com.intellij.execution.Executor;
 import com.intellij.execution.configuration.EnvironmentVariablesData;
@@ -19,6 +19,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiManager;
 import org.intellij.crystal.JdomUtils;
+import org.intellij.crystal.ide.project.CrystalCompiler;
+import org.intellij.crystal.ide.project.CrystalProjectWorkspaceSettings;
 import org.jdom.Element;
 
 import java.io.IOException;
