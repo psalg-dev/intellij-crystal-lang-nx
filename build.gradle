@@ -1,0 +1,89 @@
+plugins {
+    id("java")
+    id("org.jetbrains.intellij.platform") version "2.6.0"
+}
+
+group = "org.intellij.crystal"
+version = "1.0-NX-SNAPSHOT"
+
+// Include the generated files in the source set
+sourceSets {
+    main {
+        java {
+            srcDirs("src/main/gen")
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+def remoteRobotVersion = "0.11.23"
+dependencies {
+    intellijPlatform {
+        intellijIdeaCommunity("2024.2.6")
+        bundledPlugin("com.intellij.java")
+    }
+
+    testImplementation("com.intellij.remoterobot:remote-robot:$remoteRobotVersion")
+    testImplementation("com.intellij.remoterobot:remote-fixtures:$remoteRobotVersion")
+    testImplementation("com.intellij.remoterobot:ide-launcher:$remoteRobotVersion")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.11.4")
+
+
+    // Logging Network Calls
+    testImplementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Video Recording
+    implementation("com.automation-remarks:video-recorder-junit5:2.0")
+
+}
+
+intellijPlatform {
+    buildSearchableOptions = false
+
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "242"
+        }
+    }
+    pluginVerification {
+        ides {
+            recommended()
+        }
+    }
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+intellijPlatformTesting.runIde {
+    runIdeForUiTests {
+        task {
+            jvmArgumentProviders.add({
+                [
+                        "-Drobot-server.port=8082",
+                        "-Dide.mac.message.dialogs.as.sheets=false",
+                        "-Djb.privacy.policy.text=<!--999.999-->",
+                        "-Djb.consents.confirmation.enabled=false",
+                        "-Dide.mac.file.chooser.native=false",
+                        "-DjbScreenMenuBar.enabled=false",
+                        "-Dapple.laf.useScreenMenuBar=false",
+                        "-Didea.trust.all.projects=true",
+                        "-Dide.show.tips.on.startup.default.value=false",
+                ]
+            } as CommandLineArgumentProvider)
+        }
+        plugins {
+            robotServerPlugin(remoteRobotVersion)
+        }
+    }
+}
