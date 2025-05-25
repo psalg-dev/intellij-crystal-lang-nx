@@ -13,6 +13,8 @@ import com.intellij.refactoring.util.CommonRefactoringUtil;
 import org.intellij.crystal.ProcessUtilsExt;
 import org.intellij.crystal.ide.project.*;
 import org.intellij.crystal.ide.project.run.CrystalFileRunConfigurationType;
+import org.intellij.crystal.ide.tool.CrystalLocalToolPeer;
+import org.intellij.crystal.ide.tool.CrystalToolPeer;
 import org.jetbrains.annotations.NotNull;
 
 import static java.util.Optional.ofNullable;

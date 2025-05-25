@@ -1,5 +1,7 @@
 package org.intellij.crystal.ide.project;
 
+import org.intellij.crystal.ide.tool.CrystalLocalToolPeer;
+
 public class CrystalProjectWorkspaceSettings {
 
     private static final String SERVICE_NAME = "CrystalProjectWorkspaceSettings";

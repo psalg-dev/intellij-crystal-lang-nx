@@ -6,6 +6,7 @@ import com.intellij.execution.process.CapturingProcessHandler;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.intellij.crystal.ProcessUtilsExt;
+import org.intellij.crystal.ide.tool.CrystalToolPeer;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.Arrays;
