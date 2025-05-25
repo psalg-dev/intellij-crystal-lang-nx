@@ -20,5 +20,5 @@ Although JetBrains promotes the use of Kotlin for plugin development, we chose J
 in the hopes that it will be easier for others to contribute and keep this alive across upcoming versions of Intellij.
 
 # Resources
-https://plugins.jetbrains.com/docs/intellij/custom-language-support.html
-https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples
+- https://plugins.jetbrains.com/docs/intellij/custom-language-support.html
+- https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples
