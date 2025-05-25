@@ -5,8 +5,9 @@ Existing Intellij Plugins for Crystal are not actively maintained and
 are not compatible with later versions of Intellij. 
 This project aims to provide an alternative while building on what's already available in existing plugins.
 
-# Features
+# Todos
 - New Project Wizard Support [/]
+- Intellij Module Support [/]
 - Syntax Highlighting [x]
 - Code Completion [x]
 - Refactoring Support [x]
@@ -14,6 +15,13 @@ This project aims to provide an alternative while building on what's already ava
 - Code Inspections [x]
 - Code Navigation [x]
 - Code Folding [x]
+
+# Features
+### New Project Wizard Support [/]
+![new-project-wizard.png](docs/new-project-wizard.png)
+
+### Intellij Module Support
+![project-view.png](docs/project-view.png)
 
 # Why Java
 Although JetBrains promotes the use of Kotlin for plugin development, we chose Java for this project
