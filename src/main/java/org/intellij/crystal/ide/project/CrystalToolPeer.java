@@ -52,7 +52,7 @@ public abstract class CrystalToolPeer {
     }
 }
 
-class CrystalLocalToolPeer extends CrystalToolPeer {
+public class CrystalLocalToolPeer extends CrystalToolPeer {
     private final Path fullPath;
 
     public CrystalLocalToolPeer(String path) {
