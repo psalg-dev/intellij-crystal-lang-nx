@@ -40,8 +40,17 @@
                 implementationClass="org.intellij.crystal.lang.syntax.CrystalSyntaxHighlighterFactory"/>
         <colorSettingsPage
                 implementation="org.intellij.crystal.lang.syntax.CrystalColorSettingsPage"/>
+
         <!-- project -->
-        <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.CrystalProjectGenerator"/>
+        <projectService serviceImplementation="org.intellij.crystal.ide.project.CrystalProjectSettings"/>
+        <projectService serviceImplementation="org.intellij.crystal.ide.project.CrystalProjectWorkspaceSettings"/>
+        <moduleBuilder builderClass="org.intellij.crystal.ide.project.CrystalModuleBuilder"/>
+
+        <configurationType implementation="org.intellij.crystal.ide.project.CrystalFileRunConfigurationType"/>
+        <configurationType implementation="org.intellij.crystal.ide.project.CrystalFileBuildConfigurationType"/>
+        <directoryProjectGenerator implementation="org.intellij.crystal.ide.project.CrystalDirectoryProjectGenerator"/>
+        <newProjectWizard.languageGenerator implementation="org.intellij.crystal.ide.project.CrystalLanguageGeneratorNewProjectWizard"/>
+        <treeStructureProvider implementation="org.intellij.crystal.ide.project.tree.CrystalProjectStructureProvider"/>
 
     </extensions>
 </idea-plugin>

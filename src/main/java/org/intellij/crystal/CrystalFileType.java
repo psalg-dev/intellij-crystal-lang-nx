@@ -29,7 +29,7 @@ public class CrystalFileType extends LanguageFileType {
 
     @Override
     public Icon getIcon() {
-        return Icons.FILE;
+        return CrystalIcons.FILE;
     }
 
 }

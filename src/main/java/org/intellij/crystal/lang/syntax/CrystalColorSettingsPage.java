@@ -5,7 +5,7 @@ import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorDescriptor;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
-import org.intellij.crystal.Icons;
+import org.intellij.crystal.CrystalIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +23,7 @@ public class CrystalColorSettingsPage implements ColorSettingsPage {
 
     @Override
     public Icon getIcon() {
-        return Icons.FILE;
+        return CrystalIcons.FILE;
     }
 
     @NotNull
